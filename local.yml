@@ -4,7 +4,13 @@
 
   tasks:
   - debug:
-      var: ansible_facts
+  var: ansible_facts
+
+  - local_action:
+        module: copy
+        content: "{{ ansible_facts }}"
+        dest: ~/ansible_system_facts
+
 
 
 
