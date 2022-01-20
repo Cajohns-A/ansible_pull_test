@@ -3,10 +3,14 @@
   become: true
 
   tasks:
+    
+  - setup: 
+    register: setupvar
+
 
   - name: Create system facts file
     ansible.builtin.copy:
-      src: "{{ vars }}"
+      src: "{{ setupvar.ansible_facts }}"
       dest: ~/ansible_system_facts.txt
 
 
