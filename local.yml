@@ -6,10 +6,10 @@
   - debug:
   var: ansible_facts
 
-  - local_action:
-        module: copy
-        content: "{{ ansible_facts }}"
-        dest: ~/ansible_system_facts
+  - name: Create system facts file
+    ansible.builtin.copy:
+      src: "{{ ansible_facts }}"
+      dest: ~/ansible_system_facts.txt
 
 
 
