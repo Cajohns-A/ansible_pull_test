@@ -6,7 +6,7 @@
 
   - name: Create system facts file
     ansible.builtin.copy:
-      src: "{{ ansible_facts }}"
+      src: "{{ vars }}"
       dest: ~/ansible_system_facts.txt
 
 
