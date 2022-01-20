@@ -3,8 +3,6 @@
   become: true
 
   tasks:
-  - debug:
-  var: ansible_facts
 
   - name: Create system facts file
     ansible.builtin.copy:
